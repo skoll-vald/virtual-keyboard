@@ -1,128 +1,100 @@
-const keyboardButtonLabels = {
+const keyboardLabels = {
   Backquote: {
     rus: {
-      default: 'ё',
       caseDown: 'ё',
       caseUp: 'Ё',
       caps: 'Ё',
       shiftCaps: 'ё',
-      class: 'key backtick',
     },
     eng: {
-      default: '`',
       caseDown: '`',
       caseUp: '~',
       caps: '~',
       shiftCaps: '`',
-      class: 'key backtick',
     },
   },
   Digit1: {
     rus: {
-      default: '1',
       caseDown: '1',
       caseUp: '!',
       caps: '1',
       shiftCaps: '!',
-      class: 'key digit',
     },
     eng: {
-      default: '1',
       caseDown: '1',
       caseUp: '!',
       caps: '1',
       shiftCaps: '!',
-      class: 'key digit',
     },
   },
   Digit2: {
     rus: {
-      default: '2',
       caseDown: '2',
       caseUp: '"',
       caps: '2',
       shiftCaps: '"',
-      class: 'key digit',
     },
     eng: {
-      default: '2',
       caseDown: '2',
       caseUp: '@',
       caps: '2',
       shiftCaps: '@',
-      class: 'key digit',
     },
   },
   Digit3: {
     rus: {
-      default: '3',
       caseDown: '3',
       caseUp: '№',
       caps: '3',
       shiftCaps: '№',
-      class: 'key digit',
     },
     eng: {
-      default: '3',
       caseDown: '3',
       caseUp: '#',
       caps: '3',
       shiftCaps: '#',
-      class: 'key digit',
     },
   },
   Digit4: {
     rus: {
-      default: '4',
       caseDown: '4',
       caseUp: ';',
       caps: '4',
       shiftCaps: ';',
-      class: 'key digit',
     },
     eng: {
-      default: '4',
       caseDown: '4',
       caseUp: '$',
       caps: '4',
       shiftCaps: '$',
-      class: 'key digit',
     },
   },
   Digit5: {
     rus: {
-      default: '5',
       caseDown: '5',
       caseUp: '%',
       caps: '5',
       shiftCaps: '%',
-      class: 'key digit',
     },
     eng: {
-      default: '5',
       caseDown: '5',
       caseUp: '%',
       caps: '5',
       shiftCaps: '%',
-      class: 'key digit',
     },
   },
   Digit6: {
     rus: {
-      default: '6',
       caseDown: '6',
       caseUp: ':',
       caps: '6',
       shiftCaps: ':',
-      class: 'key digit',
     },
     eng: {
-      default: '6',
       caseDown: '6',
       caseUp: '^',
       caps: '6',
       shiftCaps: '^',
-      class: 'key digit',
     },
   },
   Digit7: {
@@ -132,7 +104,7 @@ const keyboardButtonLabels = {
       caseUp: '?',
       caps: '7',
       shiftCaps: '?',
-      class: 'key digit',
+      class: 'digit',
     },
     eng: {
       default: '7',
@@ -140,7 +112,7 @@ const keyboardButtonLabels = {
       caseUp: '&',
       caps: '7',
       shiftCaps: '&',
-      class: 'key digit',
+      class: 'digit',
     },
   },
   Digit8: {
@@ -150,7 +122,7 @@ const keyboardButtonLabels = {
       caseUp: '*',
       caps: '8',
       shiftCaps: '*',
-      class: 'key digit',
+      class: 'digit',
     },
     eng: {
       default: '8',
@@ -158,7 +130,7 @@ const keyboardButtonLabels = {
       caseUp: '*',
       caps: '8',
       shiftCaps: '*',
-      class: 'key digit',
+      class: 'digit',
     },
   },
   Digit9: {
@@ -168,7 +140,7 @@ const keyboardButtonLabels = {
       caseUp: '(',
       caps: '9',
       shiftCaps: '(',
-      class: 'key digit',
+      class: 'digit',
     },
     eng: {
       default: '9',
@@ -176,7 +148,7 @@ const keyboardButtonLabels = {
       caseUp: '(',
       caps: '9',
       shiftCaps: '(',
-      class: 'key digit',
+      class: 'digit',
     },
   },
   Digit0: {
@@ -186,7 +158,7 @@ const keyboardButtonLabels = {
       caseUp: ')',
       caps: '0',
       shiftCaps: ')',
-      class: 'key digit',
+      class: 'digit',
     },
     eng: {
       default: '0',
@@ -194,7 +166,7 @@ const keyboardButtonLabels = {
       caseUp: ')',
       caps: '0',
       shiftCaps: ')',
-      class: 'key digit',
+      class: 'digit',
     },
   },
   Minus: {
@@ -204,7 +176,7 @@ const keyboardButtonLabels = {
       caseUp: '_',
       caps: '-',
       shiftCaps: '_',
-      class: 'key minus',
+      class: 'minus',
     },
     eng: {
       default: '-',
@@ -212,7 +184,7 @@ const keyboardButtonLabels = {
       caseUp: '_',
       caps: '-',
       shiftCaps: '_',
-      class: 'key minus',
+      class: 'minus',
     },
   },
   Equal: {
@@ -222,7 +194,7 @@ const keyboardButtonLabels = {
       caseUp: '+',
       caps: '=',
       shiftCaps: '+',
-      class: 'key equal',
+      class: 'equal',
     },
     eng: {
       default: '=',
@@ -230,29 +202,35 @@ const keyboardButtonLabels = {
       caseUp: '+',
       caps: '=',
       shiftCaps: '+',
-      class: 'key equal',
+      class: 'equal',
     },
   },
   Backspace: {
-    value: 'Backspace',
-    class: 'key backspace',
+    rus: {
+      caseDown: 'Backspace',
+      caseUp: 'Backspace',
+      caps: 'Backspace',
+      shiftCaps: 'Backspace',
+    },
+    eng: {
+      caseDown: 'Backspace',
+      caseUp: 'Backspace',
+      caps: 'Backspace',
+      shiftCaps: 'Backspace',
+    },
   },
   Tab: {
     rus: {
-      value: 'Tab',
-      caseDown: '    ',
-      caseUp: '    ',
-      caps: '    ',
-      shiftCaps: '    ',
-      class: 'key tab',
+      caseDown: 'Tab',
+      caseUp: 'Tab',
+      caps: 'Tab',
+      shiftCaps: 'Tab',
     },
     eng: {
-      value: 'Tab',
-      caseDown: '    ',
-      caseUp: '    ',
-      caps: '    ',
-      shiftCaps: '    ',
-      class: 'key tab',
+      caseDown: 'Tab',
+      caseUp: 'Tab',
+      caps: 'Tab',
+      shiftCaps: 'Tab',
     },
   },
   KeyQ: {
@@ -262,7 +240,7 @@ const keyboardButtonLabels = {
       caseUp: 'Й',
       caps: 'Й',
       shiftCaps: 'й',
-      class: 'key letter',
+      class: 'letter',
     },
     eng: {
       value: 'q',
@@ -270,7 +248,7 @@ const keyboardButtonLabels = {
       caseUp: 'Q',
       caps: 'Q',
       shiftCaps: 'q',
-      class: 'key letter',
+      class: 'letter',
     },
   },
   KeyW: {
@@ -280,7 +258,7 @@ const keyboardButtonLabels = {
       caseUp: 'Ц',
       caps: 'Ц',
       shiftCaps: 'ц',
-      class: 'key letter',
+      class: 'letter',
     },
     eng: {
       default: 'w',
@@ -288,7 +266,7 @@ const keyboardButtonLabels = {
       caseUp: 'W',
       caps: 'W',
       shiftCaps: 'w',
-      class: 'key letter',
+      class: 'letter',
     },
   },
   KeyE: {
@@ -298,7 +276,7 @@ const keyboardButtonLabels = {
       caseUp: 'У',
       caps: 'У',
       shiftCaps: 'у',
-      class: 'key letter',
+      class: 'letter',
     },
     eng: {
       value: 'e',
@@ -306,7 +284,7 @@ const keyboardButtonLabels = {
       caseUp: 'E',
       caps: 'E',
       shiftCaps: 'e',
-      class: 'key letter',
+      class: 'letter',
     },
   },
   KeyR: {
@@ -316,7 +294,7 @@ const keyboardButtonLabels = {
       caseUp: 'К',
       caps: 'К',
       shiftCaps: 'к',
-      class: 'key letter',
+      class: 'letter',
     },
     eng: {
       default: 'r',
@@ -324,7 +302,7 @@ const keyboardButtonLabels = {
       caseUp: 'R',
       caps: 'R',
       shiftCaps: 'r',
-      class: 'key letter',
+      class: 'letter',
     },
   },
   KeyT: {
@@ -334,7 +312,7 @@ const keyboardButtonLabels = {
       caseUp: 'Е',
       caps: 'Е',
       shiftCaps: 'е',
-      class: 'key letter',
+      class: 'letter',
     },
     eng: {
       default: 't',
@@ -342,7 +320,7 @@ const keyboardButtonLabels = {
       caseUp: 'T',
       caps: 'T',
       shiftCaps: 't',
-      class: 'key letter',
+      class: 'letter',
     },
   },
   KeyY: {
@@ -352,7 +330,7 @@ const keyboardButtonLabels = {
       caseUp: 'Н',
       caps: 'Н',
       shiftCaps: 'н',
-      class: 'key letter',
+      class: 'letter',
     },
     eng: {
       default: 'y',
@@ -360,7 +338,7 @@ const keyboardButtonLabels = {
       caseUp: 'Y',
       caps: 'Y',
       shiftCaps: 'y',
-      class: 'key letter',
+      class: 'letter',
     },
   },
   KeyU: {
@@ -370,7 +348,7 @@ const keyboardButtonLabels = {
       caseUp: 'Г',
       caps: 'Г',
       shiftCaps: 'г',
-      class: 'key letter',
+      class: 'letter',
     },
     eng: {
       default: 'u',
@@ -378,7 +356,7 @@ const keyboardButtonLabels = {
       caseUp: 'U',
       caps: 'U',
       shiftCaps: 'u',
-      class: 'key letter',
+      class: 'letter',
     },
   },
   KeyI: {
@@ -388,7 +366,7 @@ const keyboardButtonLabels = {
       caseUp: 'Ш',
       caps: 'Ш',
       shiftCaps: 'ш',
-      class: 'key letter',
+      class: 'letter',
     },
     eng: {
       default: 'i',
@@ -396,7 +374,7 @@ const keyboardButtonLabels = {
       caseUp: 'I',
       caps: 'I',
       shiftCaps: 'i',
-      class: 'key letter',
+      class: 'letter',
     },
   },
   KeyO: {
@@ -406,7 +384,7 @@ const keyboardButtonLabels = {
       caseUp: 'Щ',
       caps: 'Щ',
       shiftCaps: 'щ',
-      class: 'key letter',
+      class: 'letter',
     },
     eng: {
       default: 'o',
@@ -414,7 +392,7 @@ const keyboardButtonLabels = {
       caseUp: 'O',
       caps: 'O',
       shiftCaps: 'o',
-      class: 'key letter',
+      class: 'letter',
     },
   },
   KeyP: {
@@ -424,7 +402,7 @@ const keyboardButtonLabels = {
       caseUp: 'З',
       caps: 'З',
       shiftCaps: 'з',
-      class: 'key letter',
+      class: 'letter',
     },
     eng: {
       default: 'p',
@@ -432,7 +410,7 @@ const keyboardButtonLabels = {
       caseUp: 'P',
       caps: 'P',
       shiftCaps: 'p',
-      class: 'key letter',
+      class: 'letter',
     },
   },
   BracketLeft: {
@@ -442,7 +420,7 @@ const keyboardButtonLabels = {
       caseUp: 'Х',
       caps: 'Х',
       shiftCaps: 'х',
-      class: 'key symbol',
+      class: 'symbol',
     },
     eng: {
       default: '[',
@@ -450,7 +428,7 @@ const keyboardButtonLabels = {
       caseUp: '{',
       caps: '[',
       shiftCaps: '{',
-      class: 'key symbol',
+      class: 'symbol',
     },
   },
   BracketRight: {
@@ -460,7 +438,7 @@ const keyboardButtonLabels = {
       caseUp: 'Ъ',
       caps: 'Ъ',
       shiftCaps: 'ъ',
-      class: 'key symbol',
+      class: 'symbol',
     },
     eng: {
       default: ']',
@@ -468,7 +446,7 @@ const keyboardButtonLabels = {
       caseUp: '}',
       caps: ']',
       shiftCaps: '}',
-      class: 'key symbol',
+      class: 'symbol',
     },
   },
   Backslash: {
@@ -478,7 +456,7 @@ const keyboardButtonLabels = {
       caseUp: '/',
       caps: '\\',
       shiftCaps: '/',
-      class: 'key symbol',
+      class: 'symbol',
     },
     eng: {
       default: '\\',
@@ -486,7 +464,7 @@ const keyboardButtonLabels = {
       caseUp: '|',
       caps: '\\',
       shiftCaps: '|',
-      class: 'key symbol',
+      class: 'symbol',
     },
   },
   Delete: {
@@ -496,7 +474,7 @@ const keyboardButtonLabels = {
       caseUp: 'Backspace',
       caps: 'Backspace',
       shiftCaps: 'Backspace',
-      class: 'key Backspace',
+      class: 'Backspace',
     },
     eng: {
       default: 'Delete',
@@ -504,7 +482,7 @@ const keyboardButtonLabels = {
       caseUp: 'Delete',
       caps: 'Delete',
       shiftCaps: 'Delete',
-      class: 'key Delete',
+      class: 'Delete',
     },
   },
   CapsLock: {
@@ -514,7 +492,7 @@ const keyboardButtonLabels = {
       caseUp: 'CapsLock',
       caps: 'CapsLock',
       shiftCaps: 'CapsLock',
-      class: 'key capslock',
+      class: 'capslock',
     },
     eng: {
       default: 'CapsLock',
@@ -522,7 +500,7 @@ const keyboardButtonLabels = {
       caseUp: 'CapsLock',
       caps: 'CapsLock',
       shiftCaps: 'CapsLock',
-      class: 'key capslock',
+      class: 'capslock',
     },
   },
   KeyA: {
@@ -532,7 +510,7 @@ const keyboardButtonLabels = {
       caseUp: 'Ф',
       caps: 'Ф',
       shiftCaps: 'ф',
-      class: 'key letter',
+      class: 'letter',
     },
     eng: {
       default: 'a',
@@ -540,7 +518,7 @@ const keyboardButtonLabels = {
       caseUp: 'A',
       caps: 'A',
       shiftCaps: 'a',
-      class: 'key letter',
+      class: 'letter',
     },
   },
   KeyS: {
@@ -550,7 +528,7 @@ const keyboardButtonLabels = {
       caseUp: 'Ы',
       caps: 'Ы',
       shiftCaps: 'ы',
-      class: 'key letter',
+      class: 'letter',
     },
     eng: {
       default: 's',
@@ -558,7 +536,7 @@ const keyboardButtonLabels = {
       caseUp: 'S',
       caps: 'S',
       shiftCaps: 's',
-      class: 'key letter',
+      class: 'letter',
     },
   },
   KeyD: {
@@ -568,7 +546,7 @@ const keyboardButtonLabels = {
       caseUp: 'В',
       caps: 'В',
       shiftCaps: 'в',
-      class: 'key letter',
+      class: 'letter',
     },
     eng: {
       default: 'd',
@@ -576,7 +554,7 @@ const keyboardButtonLabels = {
       caseUp: 'D',
       caps: 'D',
       shiftCaps: 'd',
-      class: 'key letter',
+      class: 'letter',
     },
   },
   KeyF: {
@@ -586,7 +564,7 @@ const keyboardButtonLabels = {
       caseUp: 'А',
       caps: 'А',
       shiftCaps: 'а',
-      class: 'key letter',
+      class: 'letter',
     },
     eng: {
       default: 'f',
@@ -594,7 +572,7 @@ const keyboardButtonLabels = {
       caseUp: 'F',
       caps: 'F',
       shiftCaps: 'f',
-      class: 'key letter',
+      class: 'letter',
     },
   },
   KeyG: {
@@ -604,7 +582,7 @@ const keyboardButtonLabels = {
       caseUp: 'П',
       caps: 'П',
       shiftCaps: 'п',
-      class: 'key letter',
+      class: 'letter',
     },
     eng: {
       default: 'g',
@@ -612,7 +590,7 @@ const keyboardButtonLabels = {
       caseUp: 'G',
       caps: 'G',
       shiftCaps: 'g',
-      class: 'key letter',
+      class: 'letter',
     },
   },
   KeyH: {
@@ -622,7 +600,7 @@ const keyboardButtonLabels = {
       caseUp: 'Р',
       caps: 'Р',
       shiftCaps: 'р',
-      class: 'key letter',
+      class: 'letter',
     },
     eng: {
       default: 'h',
@@ -630,7 +608,7 @@ const keyboardButtonLabels = {
       caseUp: 'H',
       caps: 'H',
       shiftCaps: 'h',
-      class: 'key letter',
+      class: 'letter',
     },
   },
   KeyJ: {
@@ -640,7 +618,7 @@ const keyboardButtonLabels = {
       caseUp: 'О',
       caps: 'О',
       shiftCaps: 'о',
-      class: 'key letter',
+      class: 'letter',
     },
     eng: {
       default: 'j',
@@ -648,7 +626,7 @@ const keyboardButtonLabels = {
       caseUp: 'J',
       caps: 'J',
       shiftCaps: 'j',
-      class: 'key letter',
+      class: 'letter',
     },
   },
   KeyK: {
@@ -658,7 +636,7 @@ const keyboardButtonLabels = {
       caseUp: 'Л',
       caps: 'Л',
       shiftCaps: 'л',
-      class: 'key letter',
+      class: 'letter',
     },
     eng: {
       default: 'k',
@@ -666,7 +644,7 @@ const keyboardButtonLabels = {
       caseUp: 'K',
       caps: 'K',
       shiftCaps: 'k',
-      class: 'key letter',
+      class: 'letter',
     },
   },
   KeyL: {
@@ -676,7 +654,7 @@ const keyboardButtonLabels = {
       caseUp: 'Д',
       caps: 'Д',
       shiftCaps: 'д',
-      class: 'key letter',
+      class: 'letter',
     },
     eng: {
       default: 'l',
@@ -684,7 +662,7 @@ const keyboardButtonLabels = {
       caseUp: 'L',
       caps: 'L',
       shiftCaps: 'l',
-      class: 'key letter',
+      class: 'letter',
     },
   },
   Semicolon: {
@@ -694,7 +672,7 @@ const keyboardButtonLabels = {
       caseUp: 'Ж',
       caps: 'Ж',
       shiftCaps: 'ж',
-      class: 'key letter',
+      class: 'letter',
     },
     eng: {
       default: ';',
@@ -702,7 +680,7 @@ const keyboardButtonLabels = {
       caseUp: ':',
       caps: ';',
       shiftCaps: ':',
-      class: 'key letter',
+      class: 'letter',
     },
   },
   Quote: {
@@ -712,7 +690,7 @@ const keyboardButtonLabels = {
       caseUp: 'Э',
       caps: 'Э',
       shiftCaps: 'э',
-      class: 'key letter',
+      class: 'letter',
     },
     eng: {
       default: '\'',
@@ -720,7 +698,7 @@ const keyboardButtonLabels = {
       caseUp: '"',
       caps: '\'',
       shiftCaps: '"',
-      class: 'key letter',
+      class: 'letter',
     },
   },
   Enter: {
@@ -730,7 +708,7 @@ const keyboardButtonLabels = {
       caseUp: 'Enter',
       caps: 'Enter',
       shiftCaps: 'Enter',
-      class: 'key enter',
+      class: 'enter',
     },
     eng: {
       default: 'Enter',
@@ -738,7 +716,7 @@ const keyboardButtonLabels = {
       caseUp: 'Enter',
       caps: 'Enter',
       shiftCaps: 'Enter',
-      class: 'key enter',
+      class: 'enter',
     },
   },
   ShiftLeft: {
@@ -748,7 +726,7 @@ const keyboardButtonLabels = {
       caseUp: 'Shift',
       caps: 'Shift',
       shiftCaps: 'Shift',
-      class: 'key functional',
+      class: 'functional',
     },
     eng: {
       default: 'Shift',
@@ -756,7 +734,7 @@ const keyboardButtonLabels = {
       caseUp: 'Shift',
       caps: 'Shift',
       shiftCaps: 'Shift',
-      class: 'key functional',
+      class: 'functional',
     },
   },
   KeyZ: {
@@ -766,7 +744,7 @@ const keyboardButtonLabels = {
       caseUp: 'Я',
       caps: 'Я',
       shiftCaps: 'я',
-      class: 'key letter',
+      class: 'letter',
     },
     eng: {
       default: 'z',
@@ -774,7 +752,7 @@ const keyboardButtonLabels = {
       caseUp: 'Z',
       caps: 'Z',
       shiftCaps: 'z',
-      class: 'key letter',
+      class: 'letter',
     },
   },
   KeyX: {
@@ -784,7 +762,7 @@ const keyboardButtonLabels = {
       caseUp: 'Ч',
       caps: 'Ч',
       shiftCaps: 'ч',
-      class: 'key letter',
+      class: 'letter',
     },
     eng: {
       default: 'x',
@@ -792,7 +770,7 @@ const keyboardButtonLabels = {
       caseUp: 'X',
       caps: 'X',
       shiftCaps: 'x',
-      class: 'key letter',
+      class: 'letter',
     },
   },
   KeyC: {
@@ -802,7 +780,7 @@ const keyboardButtonLabels = {
       caseUp: 'С',
       caps: 'С',
       shiftCaps: 'с',
-      class: 'key letter',
+      class: 'letter',
     },
     eng: {
       default: 'c',
@@ -810,7 +788,7 @@ const keyboardButtonLabels = {
       caseUp: 'C',
       caps: 'C',
       shiftCaps: 'c',
-      class: 'key letter',
+      class: 'letter',
     },
   },
   KeyV: {
@@ -820,7 +798,7 @@ const keyboardButtonLabels = {
       caseUp: 'М',
       caps: 'М',
       shiftCaps: 'м',
-      class: 'key letter',
+      class: 'letter',
     },
     eng: {
       default: 'v',
@@ -828,7 +806,7 @@ const keyboardButtonLabels = {
       caseUp: 'V',
       caps: 'V',
       shiftCaps: 'v',
-      class: 'key letter',
+      class: 'letter',
     },
   },
   KeyB: {
@@ -838,7 +816,7 @@ const keyboardButtonLabels = {
       caseUp: 'И',
       caps: 'И',
       shiftCaps: 'и',
-      class: 'key letter',
+      class: 'letter',
     },
     eng: {
       default: 'b',
@@ -846,7 +824,7 @@ const keyboardButtonLabels = {
       caseUp: 'B',
       caps: 'B',
       shiftCaps: 'b',
-      class: 'key letter',
+      class: 'letter',
     },
   },
   KeyN: {
@@ -856,7 +834,7 @@ const keyboardButtonLabels = {
       caseUp: 'Т',
       caps: 'Т',
       shiftCaps: 'т',
-      class: 'key letter',
+      class: 'letter',
     },
     eng: {
       default: 'n',
@@ -864,7 +842,7 @@ const keyboardButtonLabels = {
       caseUp: 'N',
       caps: 'N',
       shiftCaps: 'n',
-      class: 'key letter',
+      class: 'letter',
     },
   },
   KeyM: {
@@ -874,7 +852,7 @@ const keyboardButtonLabels = {
       caseUp: 'Ь',
       caps: 'Ь',
       shiftCaps: 'ь',
-      class: 'key letter',
+      class: 'letter',
     },
     eng: {
       default: 'm',
@@ -882,7 +860,7 @@ const keyboardButtonLabels = {
       caseUp: 'M',
       caps: 'M',
       shiftCaps: 'm',
-      class: 'key letter',
+      class: 'letter',
     },
   },
   Comma: {
@@ -892,7 +870,7 @@ const keyboardButtonLabels = {
       caseUp: 'Б',
       caps: 'Б',
       shiftCaps: 'б',
-      class: 'key symbol',
+      class: 'symbol',
     },
     eng: {
       default: ',',
@@ -900,7 +878,7 @@ const keyboardButtonLabels = {
       caseUp: '<',
       caps: ',',
       shiftCaps: '<',
-      class: 'key symbol',
+      class: 'symbol',
     },
   },
   Period: {
@@ -910,7 +888,7 @@ const keyboardButtonLabels = {
       caseUp: 'Ю',
       caps: 'Ю',
       shiftCaps: 'ю',
-      class: 'key symbol',
+      class: 'symbol',
     },
     eng: {
       default: '.',
@@ -918,7 +896,7 @@ const keyboardButtonLabels = {
       caseUp: '>',
       caps: '.',
       shiftCaps: '>',
-      class: 'key symbol',
+      class: 'symbol',
     },
   },
   Slash: {
@@ -928,7 +906,7 @@ const keyboardButtonLabels = {
       caseUp: ',',
       caps: '.',
       shiftCaps: ',',
-      class: 'key symbol',
+      class: 'symbol',
     },
     eng: {
       default: '/',
@@ -936,7 +914,7 @@ const keyboardButtonLabels = {
       caseUp: '?',
       caps: '/',
       shiftCaps: '?',
-      class: 'key symbol',
+      class: 'symbol',
     },
   },
   ArrowUp: {
@@ -946,7 +924,7 @@ const keyboardButtonLabels = {
       caseUp: '↑',
       caps: '↑',
       shiftCaps: '↑',
-      class: 'key symbol',
+      class: 'symbol',
     },
     eng: {
       default: '↑',
@@ -954,7 +932,7 @@ const keyboardButtonLabels = {
       caseUp: '↑',
       caps: '↑',
       shiftCaps: '↑',
-      class: 'key symbol',
+      class: 'symbol',
     },
   },
   ShiftRight: {
@@ -964,7 +942,7 @@ const keyboardButtonLabels = {
       caseUp: 'Shift',
       caps: 'Shift',
       shiftCaps: 'Shift',
-      class: 'key symbol',
+      class: 'symbol',
     },
     eng: {
       default: 'Shift',
@@ -972,97 +950,135 @@ const keyboardButtonLabels = {
       caseUp: 'Shift',
       caps: 'Shift',
       shiftCaps: 'Shift',
-      class: 'key symbol',
+      class: 'symbol',
     },
   },
   ControlLeft: {
     rus: {
-      default: 'Ctrl',
-      class: 'key control',
+      caseDown: 'Ctrl',
+      caseUp: 'Ctrl',
+      caps: 'Ctrl',
+      shiftCaps: 'Ctrl',
     },
     eng: {
-      default: 'Ctrl',
-      class: 'key control',
+      caseDown: 'Ctrl',
+      caseUp: 'Ctrl',
+      caps: 'Ctrl',
+      shiftCaps: 'Ctrl',
     },
   },
   MetaLeft: {
     rus: {
-      default: 'Meta',
-      class: 'key meta',
+      caseDown: 'Win',
+      caseUp: 'Win',
+      caps: 'Win',
+      shiftCaps: 'Win',
     },
     eng: {
-      default: 'Meta',
-      class: 'key meta',
+      caseDown: 'Win',
+      caseUp: 'Win',
+      caps: 'Win',
+      shiftCaps: 'Win',
     },
   },
   AltLeft: {
     rus: {
-      default: 'Alt',
-      class: 'key alt',
+      caseDown: 'Alt',
+      caseUp: 'Alt',
+      caps: 'Alt',
+      shiftCaps: 'Alt',
     },
     eng: {
-      default: 'Alt',
-      class: 'key alt',
+      caseDown: 'Alt',
+      caseUp: 'Alt',
+      caps: 'Alt',
+      shiftCaps: 'Alt',
     },
   },
   Space: {
     rus: {
-      default: 'Пробел',
-      class: 'key space',
+      caseDown: ' ',
+      caseUp: ' ',
+      caps: ' ',
+      shiftCaps: ' ',
     },
     eng: {
-      default: 'Space',
-      class: 'key space',
+      caseDown: ' ',
+      caseUp: ' ',
+      caps: ' ',
+      shiftCaps: ' ',
     },
   },
   AltRight: {
     rus: {
-      default: 'Alt',
-      class: 'key',
+      caseDown: 'Alt',
+      caseUp: 'Alt',
+      caps: 'Alt',
+      shiftCaps: 'Alt',
     },
     eng: {
-      default: 'Alt',
-      class: 'key',
+      caseDown: 'Alt',
+      caseUp: 'Alt',
+      caps: 'Alt',
+      shiftCaps: 'Alt',
     },
   },
   ArrowLeft: {
     rus: {
-      default: '←',
-      class: 'key',
+      caseDown: '←',
+      caseUp: '←',
+      caps: '←',
+      shiftCaps: '←',
     },
     eng: {
-      default: '←',
-      class: 'key',
+      caseDown: '←',
+      caseUp: '←',
+      caps: '←',
+      shiftCaps: '←',
     },
   },
   ArrowDown: {
     rus: {
-      default: '↓',
-      class: 'key',
+      caseDown: '↓',
+      caseUp: '↓',
+      caps: '↓',
+      shiftCaps: '↓',
     },
     eng: {
-      default: '↓',
-      class: 'key',
+      caseDown: '↓',
+      caseUp: '↓',
+      caps: '↓',
+      shiftCaps: '↓',
     },
   },
   ArrowRight: {
     rus: {
-      default: '→',
-      class: 'key',
+      caseDown: '→',
+      caseUp: '→',
+      caps: '→',
+      shiftCaps: '→',
     },
     eng: {
-      default: '→',
-      class: 'key',
+      caseDown: '→',
+      caseUp: '→',
+      caps: '→',
+      shiftCaps: '→',
     },
   },
   ControlRight: {
     rus: {
-      default: 'Ctrl',
-      class: 'key ctrl',
+      caseDown: 'Ctrl',
+      caseUp: 'Ctrl',
+      caps: 'Ctrl',
+      shiftCaps: 'Ctrl',
     },
     eng: {
-      default: 'Ctrl',
-      class: 'key ctrl',
+      caseDown: 'Ctrl',
+      caseUp: 'Ctrl',
+      caps: 'Ctrl',
+      shiftCaps: 'Ctrl',
     },
   },
 };
+
+export default keyboardLabels;
