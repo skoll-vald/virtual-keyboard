@@ -222,3 +222,16 @@ document.addEventListener('keyup', (event) => {
 });
 
 // textarea behavior
+document.addEventListener('keydown', (event) => {
+  if (event.code === 'Tab') {
+    event.preventDefault();
+  }
+  const key = document.querySelector(`.key.${event.code}`);
+  if (key && !['Tab', 'CapsLock', 'ShiftLeft', 'ShiftRight', 'CtrlLeft', 'CtrlRight', 'Win', 'AltLeft', 'AltRight', 'ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'Backspace', 'Delete', 'Enter'].includes(event.code)) {
+    const visibleLang = key.querySelector(':not(.hidden)');
+    const visibleState = visibleLang.querySelector(':not(.hidden)');
+    const value = visibleState.textContent;
+    textarea.value += value;
+  }
+});
+
