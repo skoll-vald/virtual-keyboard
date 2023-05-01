@@ -24,7 +24,8 @@ keyboard.setAttribute('id', 'keyboard');
 wrapper.appendChild(keyboard);
 
 const keyRows = [];
-const lang = 'rus';
+let lang = 'eng';
+let keyState = 'caseDown';
 
 // Define the rows and their corresponding keys
 const rows = [  
@@ -35,50 +36,45 @@ const rows = [
   ['ControlLeft', 'MetaLeft', 'AltLeft', 'Space', 'AltRight', 'ArrowLeft', 'ArrowDown', 'ArrowRight', 'ControlRight']
 ];
 
-// Loop through each row
 rows.forEach((rowKeys) => {
-  // Create a div element for the row
   const keyRow = document.createElement('div');
-  keyRow.classList.add('keyboard--row');
   keyRow.classList.add('row');
 
-  // Loop through each key in the row
   rowKeys.forEach((key) => {
-    // Create a div element for the key
     const keyElement = document.createElement('div');
-    keyElement.classList.add('key');
-    keyElement.classList.add(key);
+    keyElement.classList.add('key', key);
 
-    // Create spans for each language and key state
     const langSpans = {};
     Object.keys(keyboardLabels[key]).forEach((language) => {
       const langSpan = document.createElement('span');
       langSpan.classList.add(language);
       langSpan.classList.add('hidden');
-      Object.keys(keyboardLabels[key][language]).forEach((keyState) => {
+      Object.keys(keyboardLabels[key][language]).forEach((state) => {
         const keyStateSpan = document.createElement('span');
-        keyStateSpan.classList.add(keyState);
-        keyStateSpan.classList.add('hidden');
-        keyStateSpan.textContent = keyboardLabels[key][language][keyState];
+        keyStateSpan.classList.add(state);
+        if (language === lang && state === keyState) {
+          keyStateSpan.classList.remove('hidden');
+          keyStateSpan.textContent = keyboardLabels[key][language][state];
+        } else {
+          keyStateSpan.classList.add('hidden');
+          keyStateSpan.textContent = keyboardLabels[key][language][state];
+        }
         langSpan.appendChild(keyStateSpan);
       });
       langSpans[language] = langSpan;
     });
+    langSpans[lang].classList.remove('hidden');
 
-    // Append the spans to the key element
     Object.keys(langSpans).forEach((language) => {
       keyElement.appendChild(langSpans[language]);
     });
 
-    // Append the key element to the row
     keyRow.appendChild(keyElement);
   });
 
-  // Append the row element to the array of rows
   keyRows.push(keyRow);
 });
 
-// Add the rows to the keyboard element
 keyRows.forEach((row) => keyboard.appendChild(row));
 
 const capsLockKey = document.querySelector('.CapsLock');
@@ -89,4 +85,19 @@ capsLockKey.addEventListener('click', () => {
   keys.forEach((key) => {
     key.classList.toggle('hidden');
   });
+});
+
+document.addEventListener('keydown', (event) => {
+  if (event.ctrlKey && event.altKey) {
+    event.preventDefault();
+    const langElements = document.querySelectorAll('.key span');
+    langElements.forEach((langElement) => {
+      const langClassList = langElement.classList;
+      if (langClassList.contains('rus')) {
+        langClassList.toggle('hidden');
+      } else if (langClassList.contains('eng')) {
+        langClassList.toggle('hidden');
+      }
+    });
+  }
 });
