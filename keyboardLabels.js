@@ -393,16 +393,16 @@ const keyboardLabels = {
   },
   Delete: {
     rus: {
-      caseDown: 'Backspace',
-      caseUp: 'Backspace',
-      caps: 'Backspace',
-      shiftCaps: 'Backspace',
+      caseDown: 'Del',
+      caseUp: 'Del',
+      caps: 'Del',
+      shiftCaps: 'Del',
     },
     eng: {
-      caseDown: 'Delete',
-      caseUp: 'Delete',
-      caps: 'Delete',
-      shiftCaps: 'Delete',
+      caseDown: 'Del',
+      caseUp: 'Del',
+      caps: 'Del',
+      shiftCaps: 'Del',
     },
   },
   CapsLock: {

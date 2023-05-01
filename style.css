@@ -12,9 +12,9 @@
 }
 
 .keyboard {
-  width: 704px;
+  width: 660px;
   margin: 0 auto;
-  padding: 10px;
+  padding: 4px;
   padding-left: 0;
   padding-bottom: 0;
   background: #888888;
@@ -26,9 +26,18 @@
   float: left;
   width: 40px;
   height: 40px;
-  margin-left: 10px;
+  margin-left: 4px;
   background: white;
   text-align: center;
+  transition: 0.2s ease;
+  cursor: pointer;
+  font-family: "Trebuchet MS", "Helvetica", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+}
+.key:hover {
+  background: orange;
+  box-shadow: inset 0 0 0 1px gray;
 }
 
 .row {
@@ -36,11 +45,41 @@
   width: 100%;
   height: 40px;
   clear: both;
-  margin-bottom: 10px;
+  margin-bottom: 4px;
 }
 
 .hidden {
   display: none;
+}
+
+.active {
+  background: orange;
+  color: white;
+  box-shadow: inset 0 0 0 3px gray;
+}
+
+.Enter {
+  width: 84px;
+}
+
+.CapsLock {
+  width: 84px;
+}
+
+.Backspace {
+  width: 84px;
+}
+
+.ShiftRight {
+  width: 84px;
+}
+
+.ShiftLeft {
+  width: 84px;
+}
+
+.Space {
+  width: 304px;
 }
 
 /*# sourceMappingURL=style.css.map */
