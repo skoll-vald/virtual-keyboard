@@ -24,8 +24,37 @@ keyboard.setAttribute('id', 'keyboard');
 wrapper.appendChild(keyboard);
 
 const keyRows = [];
-let lang = 'eng';
-let keyState = 'caseDown';
+let lang = 'rus';
+let keyState = 'caseUp';
+
+function toggleKeyState() {
+  const keys = document.querySelectorAll('.key');
+
+  keys.forEach((key) => {
+    const languageSpans = key.querySelectorAll(`.${lang}`);
+    languageSpans.forEach((langSpan) => {
+      const keyStateSpans = langSpan.querySelectorAll(`.${keyState}`);
+      keyStateSpans.forEach((keyStateSpan) => {
+        keyStateSpan.classList.toggle('hidden');
+      });
+    });
+  });
+}
+
+function toggleLanguage() {
+  const keys = document.querySelectorAll('.key');
+
+  keys.forEach((key) => {
+    const languageSpans = key.querySelectorAll('span');
+    languageSpans.forEach((langSpan) => {
+      if (langSpan.classList.contains(lang)) {
+        langSpan.classList.remove('hidden');
+      } else {
+        langSpan.classList.add('hidden');
+      }
+    });
+  });
+}
 
 // Define the rows and their corresponding keys
 const rows = [  
@@ -63,7 +92,6 @@ rows.forEach((rowKeys) => {
       });
       langSpans[language] = langSpan;
     });
-    langSpans[lang].classList.remove('hidden');
 
     Object.keys(langSpans).forEach((language) => {
       keyElement.appendChild(langSpans[language]);
@@ -77,27 +105,24 @@ rows.forEach((rowKeys) => {
 
 keyRows.forEach((row) => keyboard.appendChild(row));
 
-const capsLockKey = document.querySelector('.CapsLock');
-
-capsLockKey.addEventListener('click', () => {
-  const keys = document.querySelectorAll('.caps');
-
-  keys.forEach((key) => {
-    key.classList.toggle('hidden');
-  });
-});
-
-document.addEventListener('keydown', (event) => {
-  if (event.ctrlKey && event.altKey) {
-    event.preventDefault();
-    const langElements = document.querySelectorAll('.key span');
-    langElements.forEach((langElement) => {
-      const langClassList = langElement.classList;
-      if (langClassList.contains('rus')) {
-        langClassList.toggle('hidden');
-      } else if (langClassList.contains('eng')) {
-        langClassList.toggle('hidden');
+function updateKeyLabels() {
+  const keyElements = document.querySelectorAll('.key');
+  keyElements.forEach((keyElement) => {
+    const langSpans = keyElement.querySelectorAll(`.${lang}`);
+    langSpans.forEach((langSpan) => {
+      const keyStateSpan = langSpan.querySelector(`.${keyState}`);
+      if (keyStateSpan) {
+        keyStateSpan.classList.remove('hidden');
+        langSpan.classList.remove('hidden');
+      }
+      const otherKeyStateSpan = langSpan.querySelector(`:not(.${keyState})`);
+      if (otherKeyStateSpan) {
+        otherKeyStateSpan.classList.add('hidden');
+        langSpan.classList.remove('hidden');
       }
     });
-  }
-});
+  });
+}
+
+updateKeyLabels();
+
